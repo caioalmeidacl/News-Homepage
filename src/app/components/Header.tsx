@@ -8,20 +8,19 @@ export default async function Header() {
     const settings = await client.getSingle("settings");
 
     return (
-        <section className="flex justify-between items-center px-8 py-12 w-9/12 max-w-screen-2xl mx-auto text-center ">
-            <div>
+        <section className="py-12 w-full">
+            <div className="flex w-9/12 px-14 justify-between items-center mx-auto">
                 <PrismicNextImage field={settings.data.logo} />
+                <nav>
+                    <ul className="flex">
+                        {settings.data.navigation.map(( { link, label } ) => (
+                            <li key={label} className="mr-8">
+                                <PrismicNextLink field={link} className="text-base text-darkGrayishBlue hover:text-softRed">{label}</PrismicNextLink>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
             </div>
-
-            <nav>
-                <ul className="flex text-center">
-                    {settings.data.navigation.map(( { link, label } ) => (
-                        <li key={label} className="mr-14">
-                            <PrismicNextLink field={link} className="text-base">{label}</PrismicNextLink>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
         </section>
     );
 }
