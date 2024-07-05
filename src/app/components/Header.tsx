@@ -12,7 +12,7 @@ export default function Header({ slice }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <section className="desktop:py-12 p-2 w-full">
-      <div className="flex desktop:w-9/12 destktop:px-14 justify-between items-center desktop:mx-auto">
+      <div className="flex desktop:w-9/12 desktop:px-14 justify-between items-center desktop:mx-auto">
         <PrismicNextImage field={slice.primary.logo} alt=""/>
         <div className="desktop:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-darkGrayishBlue focus:outline-none">
