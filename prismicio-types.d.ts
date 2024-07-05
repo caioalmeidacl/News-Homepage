@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HighlightSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice = HeaderSlice | HighlightSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -69,75 +69,74 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Item in *Settings → Navigation*
- */
-export interface SettingsDocumentDataNavigationItem {
-  /**
-   * Link field in *Settings → Navigation*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.navigation[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
+export type AllDocumentTypes = HomepageDocument;
 
+/**
+ * Item in *Header → Default → Primary → Group*
+ */
+export interface HeaderSliceDefaultPrimaryGroupItem {
   /**
-   * Label field in *Settings → Navigation*
+   * Nav field in *Header → Default → Primary → Group*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: settings.navigation[].label
+   * - **API ID Path**: header.default.primary.group[].nav
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  label: prismic.KeyTextField;
+  nav: prismic.KeyTextField;
 }
 
 /**
- * Content for Settings documents
+ * Primary content in *Header → Default → Primary*
  */
-interface SettingsDocumentData {
+export interface HeaderSliceDefaultPrimary {
   /**
-   * Logo field in *Settings*
+   * Logo field in *Header → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: settings.logo
-   * - **Tab**: Main
+   * - **API ID Path**: header.default.primary.logo
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
 
   /**
-   * Navigation field in *Settings*
+   * Group field in *Header → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: settings.navigation[]
-   * - **Tab**: Main
+   * - **API ID Path**: header.default.primary.group[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+  group: prismic.GroupField<Simplify<HeaderSliceDefaultPrimaryGroupItem>>;
 }
 
 /**
- * Settings document from Prismic
+ * Default variation for Header Slice
  *
- * - **API ID**: `settings`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
  */
-export type SettingsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<SettingsDocumentData>,
-    "settings",
-    Lang
-  >;
+export type HeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeaderSliceDefaultPrimary>,
+  never
+>;
 
-export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+/**
+ * Slice variation for *Header*
+ */
+type HeaderSliceVariation = HeaderSliceDefault;
+
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `header`
+ * - **Description**: Header
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>;
 
 /**
  * Item in *Hero → Default → Primary → News*
@@ -369,10 +368,12 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      SettingsDocument,
-      SettingsDocumentData,
-      SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      HeaderSlice,
+      HeaderSliceDefaultPrimaryGroupItem,
+      HeaderSliceDefaultPrimary,
+      HeaderSliceVariation,
+      HeaderSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryNewsItem,
       HeroSliceDefaultPrimary,

@@ -8,28 +8,8 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      ss_mobile: "321px",
-      MaxS_mobile: { max: "320px" },
-      s_mobile: "445px",
-      lg: "1024px",
-      MaxLg: { max: "1024px" },
-      md: "769px",
-      MaxMd: { max: "768px" },
-      Mobile: { max: "575px" },
-      // => @media (max-width: 575px) { ... }
-
-      TabletPortrait: { max: "992px" },
-      // => @media (min-width: 575px, max-width: 992px) { ... }
-
-      TabletLandscape: { min: "992px" },
-      // => @media (min-width: 992px) { ... }
-
-      Laptop: { min: "923px", max: "1440px" },
-      LaptopS: "1200px",
-      MaxBlogGrid: { max: "1250px" },
-      BlogGrid: { min: "992px", max: "1250px" },
-      LaptopNoMin: { max: "1440px" },
-      LaptopMin: { min: "1440px" },
+      mobile: "375px",
+      desktop: "1440px"
     },
     extend: {
       fontFamily: {
