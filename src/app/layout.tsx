@@ -8,8 +8,8 @@ const inter = Inter({
 })
 // Do metadata later
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "News Homepage",
+  description: "challenge from FrontEnd mentor",
 };
 
 export default function RootLayout({
