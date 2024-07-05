@@ -3,15 +3,13 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { SliceZone } from "@prismicio/react";
 
-
-export default async function Page(){ 
+export default async function Page() { 
   const client = createClient();
   const page = await client.getSingle("homepage");
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
-
-export async function generateMetaData(): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
   const page = await client.getSingle("homepage");
   return {
