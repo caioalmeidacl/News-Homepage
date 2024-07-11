@@ -8,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      mobile: "375px",
-      desktop: "1440px"
+      mobile: {'max': '1400px'},
+      desktop: "1401px"
     },
     extend: {
       fontFamily: {
@@ -24,7 +24,7 @@ const config: Config = {
         softRed: 'hsl(5, 85%, 63%)'
       },
       letterSpacing: {
-        '2': '0.2em'
+        '2': '0.3em'
       },
     },
   },
