@@ -9,7 +9,7 @@ export default function Highlight({ slice }: HighlightProps) {
                 {slice.primary.group.map((item, index) => (
                     <div key={index} className="flex mb-7 desktop:mb-0 ">
                         <PrismicNextImage field={item.icon} width={110} height={110} alt="" />
-                        <div className="flex flex-col w-full px-4 border ">
+                        <div className="flex flex-col w-full px-4  ">
                             <PrismicRichText field={item.enum} components={{
                                 heading1: ({children}) => <h1 className="text-softRed font-bold mb-3 text-4xl">{children}</h1>
                             }}/>
