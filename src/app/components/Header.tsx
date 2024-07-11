@@ -11,8 +11,8 @@ const iconX = <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg"><g 
 export default function Header({ slice }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <section className="desktop:py-12 p-2 w-full">
-      <div className="flex desktop:w-9/12 desktop:px-14 justify-between items-center desktop:mx-auto">
+    <section className="desktop:px-4 desktop:py-10 mobile:p-4 w-full ">
+      <div className="flex desktop:w-9/12 desktop:px-0 justify-between items-center desktop:mx-auto ">
         <PrismicNextImage field={slice.primary.logo} alt=""/>
         <div className="desktop:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-darkGrayishBlue focus:outline-none">
@@ -20,11 +20,11 @@ export default function Header({ slice }: HeaderProps) {
           </button>
         </div>
 
-        <nav className="hidden desktop:block">
+        <nav className="hidden desktop:block ">
           <ul className="flex">
             {slice.primary.group.map((item, index) => (
-              <li key={index} className="mr-8 cursor-pointer">
-                <p className="text-base text-darkGrayishBlue hover:text-softRed">{item.nav}</p>
+              <li key={index} className="mr-10 pl-4 cursor-pointer">
+                <p className="text-lg text-darkGrayishBlue hover:text-softRed">{item.nav}</p>
               </li>
             ))}
           </ul>

@@ -16,12 +16,12 @@ export default function PrimaryContent({ slice }: HeroProps) {
                                     heading1: ({ children }) => <h1 className="text-veryDarkBlue font-inter font-bold text-5xl desktop:text-7xl desktop:w-96">{children}</h1>
                                 }} />
                             </div>
-                            <div className="w-full mobile:mt-5">
+                            <div className="w-full mobile:mt-5 grid">
                                 <PrismicRichText field={slice.primary.paragraph} components={{
                                     paragraph: ({ children }) => <p className="font-inter text-darkGrayishBlue text-base desktop:text-xl leading-8">{children}</p>
                                 }} />
                                 <PrismicNextLink field={slice.primary.button}
-                                    className="bg-softRed text-veryDarkBlue font-bold py-4 mt-7 flex justify-center text-lg tracking-2 hover:text-offWhite hover:bg-veryDarkBlue w-2/3">{slice.primary.button_text}</PrismicNextLink>
+                                    className="bg-softRed text-veryDarkBlue font-bold py-3 mt-7 flex items-center justify-center text-xl tracking-2 hover:text-offWhite hover:bg-veryDarkBlue w-2/3">{slice.primary.button_text}</PrismicNextLink>
                             </div>
                         </div>
                     </div>
