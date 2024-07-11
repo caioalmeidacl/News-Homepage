@@ -11,7 +11,7 @@ const iconX = <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg"><g 
 export default function Header({ slice }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <section className="desktop:px-4 desktop:py-8 mobile:p-4 w-full ">
+    <section className="desktop:px-4 desktop:pt-8 desktop:pb-2 mobile:p-4 w-full ">
       <div className="flex desktop:w-9/12 desktop:px-0 justify-between items-center desktop:mx-auto ">
         <PrismicNextImage field={slice.primary.logo} alt=""/>
         <div className="desktop:hidden">
