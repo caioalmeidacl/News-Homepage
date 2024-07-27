@@ -4,7 +4,7 @@ import { PrismicRichText } from "@prismicio/react";
 
 export default function Highlight({ slice }: HighlightProps) {
     return (
-        <section className="w-full h-full mobile:py-6">
+        <section className="hidden w-full h-full mobile:py-6">
             <div className="flex flex-col desktop:flex-row desktop:mx-auto desktop:justify-around desktop:w-4/5  px-4">
                 {slice.primary.group.map((item, index) => (
                     <div key={index} className="flex mb-7 desktop:mb-0 ">

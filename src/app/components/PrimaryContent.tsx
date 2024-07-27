@@ -4,7 +4,7 @@ import { PrismicRichText } from "@prismicio/react";
 
 export default function PrimaryContent({ slice }: HeroProps) {
     return (
-        <section className="w-full h-full p-4 grid place-items-center">
+        <section className="hidden w-full h-full p-4 grid place-items-center">
             <div className="grid w-full desktop:w-3/4 ">
                 <div className="flex flex-col desktop:flex-row">
                     <div className="flex flex-col w-full ">

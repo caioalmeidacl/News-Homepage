@@ -8,23 +8,26 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      mobile: {'max': '1400px'},
-      desktop: "1401px"
+      mobile: {'max': '767px'},
+      desktop: "768px"
     },
     extend: {
       fontFamily: {
         inter: ["inter"]
       },
       colors: {
-        veryDarkBlue: 'hsl(240, 100%, 5%)',
-        darkGrayishBlue: 'hsl(236, 13%, 42%)',
-        grayishBlue: 'hsl(233, 8%, 79%)',
-        offWhite: 'hsl(46,100%,99%)',
-        softOrange: 'hsl(35, 77%, 62%)',
-        softRed: 'hsl(5, 85%, 63%)'
+        "very-dark-blue": 'hsl(240, 100%, 5%)',
+        "dark-grayish-blue": 'hsl(236, 13%, 42%)',
+        "grayish-blue": 'hsl(233, 8%, 79%)',
+        "off-white": 'hsl(46,100%,99%)',
+        "soft-orange": 'hsl(35, 77%, 62%)',
+        "soft-red": 'hsl(5, 85%, 63%)'
       },
       letterSpacing: {
         '2': '0.3em'
+      },
+      fontSize: {
+        paragraph: "15px",
       },
     },
   },
