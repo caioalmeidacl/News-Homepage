@@ -24,10 +24,14 @@ const config: Config = {
         "soft-red": 'hsl(5, 85%, 63%)'
       },
       letterSpacing: {
-        '2': '0.3em'
+        '2': '0.2em'
       },
       fontSize: {
         paragraph: "15px",
+        '17': "17px", 
+      },
+      maxWidth: {
+        '100': '100px'
       },
     },
   },

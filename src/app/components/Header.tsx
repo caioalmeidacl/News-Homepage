@@ -59,7 +59,7 @@ export default function Header({ slice }: HeaderProps) {
 
 
       {menuOpen && (
-        <section >
+        <section>
           <div className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40"></div>
           <div className="absolute top-0 right-0 z-50 w-4/6 min-h-screen bg-white">
             <div className="flex justify-end py-8 px-4">
@@ -70,7 +70,7 @@ export default function Header({ slice }: HeaderProps) {
             <nav className="pl-8 mt-16">{list}</nav>
           </div>
         </section>
-      )};
+      )}
 
     </section>
   );

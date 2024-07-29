@@ -22,7 +22,10 @@
                 "type": "Image",
                 "config": {
                   "label": "Icon",
-                  "constraint": {},
+                  "constraint": {
+                    "width": 200,
+                    "height": 254
+                  },
                   "thumbnails": []
                 }
               },

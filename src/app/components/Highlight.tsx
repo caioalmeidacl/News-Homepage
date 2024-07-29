@@ -4,23 +4,26 @@ import { PrismicRichText } from "@prismicio/react";
 
 export default function Highlight({ slice }: HighlightProps) {
     return (
-        <section className="hidden w-full h-full mobile:py-6">
-            <div className="flex flex-col desktop:flex-row desktop:mx-auto desktop:justify-around desktop:w-4/5  px-4">
+        <section className="mt-10">
+            <ul className="flex flex-col px-4">
                 {slice.primary.group.map((item, index) => (
-                    <div key={index} className="flex mb-7 desktop:mb-0 ">
-                        <PrismicNextImage field={item.icon} width={110} height={110} alt="" />
-                        <div className="flex flex-col w-full px-4  ">
-                            <PrismicRichText field={item.enum} components={{
-                                heading1: ({children}) => <h1 className="text-softRed font-bold mb-3 text-4xl">{children}</h1>
-                            }}/>
-                            <h2 className="text-veryDarkBlue font-bold text-lg desktop:text-xl  mb-2 hover:text-softRed">{item.title}</h2>
-                            <PrismicRichText field={item.description} components={{
-                                paragraph: ({children}) => <p className="desktop:w-64 text-darkGrayishBlue text-base desktop:text-lg">{children}</p>
-                            }}/>    
+                    <li key={index} className="flex mb-8">
+                        <div className="mr-4">
+                            <PrismicNextImage field={item.icon} className="max-w-100 object-cover"/>
                         </div>
-                    </div>
+
+                        <div className="flex flex-col justify-between">
+                            <PrismicRichText field={item.enum} components={{
+                                heading1: ({ children }) => <h1 className="text-soft-red font-bold text-4xl">{children}</h1>
+                            }} />
+                            <h2 className="text-very-dark-blue font-extrabold text-17 hover:text-soft-red">{item.title}</h2>
+                            <PrismicRichText field={item.description} components={{
+                                paragraph: ({ children }) => <p className="text-dark-grayish-blue text-base">{children}</p>
+                            }} />
+                        </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </section>
     );
 }

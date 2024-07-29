@@ -168,16 +168,6 @@ export interface HeroSliceDefaultPrimaryNewsItem {
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Image field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
    * Main Text field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
