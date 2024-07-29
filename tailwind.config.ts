@@ -8,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      mobile: {'max': '767px'},
-      desktop: "768px"
+      mobile: {'max': '1365px'},
+      desktop: "1440px"
     },
     extend: {
       fontFamily: {
@@ -28,10 +28,6 @@ const config: Config = {
       },
       fontSize: {
         paragraph: "15px",
-        '17': "17px", 
-      },
-      maxWidth: {
-        '100': '100px'
       },
     },
   },

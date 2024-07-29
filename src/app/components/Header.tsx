@@ -35,16 +35,16 @@ export default function Header({ slice }: HeaderProps) {
   const list = (
     <ul className="desktop:flex">
       {slice.primary.group.map((item, index) => (
-        <li key={index} className="mobile:mb-5 cursor-pointer desktop:mr-12">
+        <li key={index} className="mobile:mb-5 cursor-pointer desktop:mr-14 desktop:last:mr-0">
           <p className="text-dark-grayish-blue hover:text-soft-red">{item.nav}</p>
         </li>
       ))}
     </ul>
   );
   return (
-    <section className="p-4 mx-auto">
-      <div className="flex items-center">
-        <div>
+    <section className="p-4">
+      <div className="flex items-center desktop:mx-auto desktop:w-fit">
+        <div className="desktop:mr-[760px]">
           <PrismicNextImage field={slice.primary.logo} />
         </div>
 
